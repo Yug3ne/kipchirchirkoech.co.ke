@@ -7,7 +7,7 @@ const Home = () => {
       <div className="p-4 flex flex-1 flex-col md:w-2/3 gap-4 bg-[#171818e9]  shadow-gray-800 shadow-xl">
         {/* name */}
         <h1 className="font-roboto text-3xl font-bold text-tlight">
-          * Hi, I'm Eugene
+          * Hi, I'm Eugene Koech
         </h1>
         {/* description */}
         <p className="md:w-[600px]">
