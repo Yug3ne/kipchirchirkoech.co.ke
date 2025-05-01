@@ -13,4 +13,21 @@ p{
   --color-bDark: rgb(28, 29, 33);
   --color-tlight: #F2F3F3;
   --font-roboto: "Roboto", sans-serif;
+
+  
+
+  
+}
+
+.service-icon {
+  -webkit-text-fill-color: transparent;
+  background-image: linear-gradient(#fff, #4b4e5f);
+  -webkit-background-clip: text;
+  background-clip: text;
+  margin-bottom: 20px;
+  font-family: Material Icon, sans-serif;
+  font-size: 3.5rem;
+  font-weight: 400;
+  line-height: 1;
+  display: inline-block;
 }
