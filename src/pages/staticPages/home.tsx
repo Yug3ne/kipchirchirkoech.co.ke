@@ -2,8 +2,9 @@ import Marquee from "react-fast-marquee";
 import { IconType } from "react-icons";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-router";
+import TypewriterComponent from "typewriter-effect";
 
-type logos = { icon: IconType; url: string; }
+type logos = { icon: IconType; url: string };
 const logos: logos[] = [
   { icon: FaGithub, url: "https://github.com/Yug3ne" },
   { icon: FaLinkedin, url: "https://www.linkedin.com/in/eugenekoech9/" },
@@ -62,7 +63,7 @@ const tools = [
   "tools/vercel_dark.svg",
   "tools/figma.svg",
   "tools/expo.svg",
-  "tools/django.svg",
+ 
 ];
 
 type whatIdo = { title: string; desc: string };
@@ -70,7 +71,7 @@ type whatIdo = { title: string; desc: string };
 const whatIdo: whatIdo[] = [
   {
     title: "Web Development",
-    desc: "I build responsive, high-performance websites using modern technologies like HTML, CSS, JavaScript, and frameworks such as React, Next.js and Phoenix. My focus is on clean code, speed, and functionality.",
+    desc: "I build responsive, high-performance websites using modern technologies like HTML, CSS, JavaScript, and frameworks such as React, Next.js and Phoenix.",
   },
   {
     title: "API Development",
@@ -90,8 +91,18 @@ const Home = () => {
         <div className="flex-1 p-1 bg-gray-00 rounded-2xl md:w-2/3 h-[400px]  bg-neutral-500">
           <div className="p-8 flex space-y-8 flex-col  bg-bDark h-full w-full rounded-2xl">
             {/* name */}
-            <h1 className="font-roboto text-3xl font-bold text-tlight">
-              * Hi, I'm Eugene Koech
+            <h1 className="font-roboto flex gap-4 text-3xl font-bold text-tlight">
+              Hi I am
+              <TypewriterComponent
+                options={{
+                  strings: ["Koech", "Eugene", "Kipchirchir"],
+                  autoStart: true,
+                  loop: true,
+                  cursor: "",
+                  delay:200,
+                  deleteSpeed:100
+                }}
+              />
             </h1>
             {/* description */}
             <p className="md:w-[500px] text-tlight">
@@ -102,9 +113,9 @@ const Home = () => {
             </p>
             <div className="flex flex-col md:flex-row justify-between gap-2 mt-10">
               <div className=" bg-[#0e0c0c52] border border-bDark rounded-md flex items-center">
-                <button className="flex items-center p-3 gap-3 text-2xl  font-roboto rounded-md text-tlight transition-transform duration-200 hover:scale-95 hover:bg-[#25212152]">
+                <Link to='/contact' className="flex items-center p-3 gap-3 text-2xl  font-roboto rounded-md text-tlight transition-transform duration-200 hover:scale-95 hover:bg-[#25212152]">
                   Get in Touch
-                </button>
+                </Link>
               </div>
               <div className="flex items-center gap-4 hover:bg-[#25212152]">
                 {logos.map(({ icon: Icon, url }, index) => (
@@ -162,13 +173,13 @@ const Home = () => {
         <div className="w-full md:w-1/4 h-[400px] bg-neutral-500 rounded-2xl p-1">
           <div className="bg-bDark rounded-2xl h-full w-full p-4">
             <h1 className="text-center text-2xl text-tlight font-roboto font-bold">
-              Tools and Framworks :
+              Tools and Framworks
             </h1>
             <div className="flex w-full mt-4">
               <Marquee speed={50} direction="right">
                 {langs.map((lang, i) => (
                   <div className="mt-0 mr-[40px]" key={i}>
-                    <img src={lang} alt="" className="w-20 h-20" />
+                    <img src={lang} alt="" className="w-15 h-15" />
                   </div>
                 ))}
               </Marquee>
@@ -177,7 +188,7 @@ const Home = () => {
               <Marquee speed={50} direction="left">
                 {frameworks.map((framework, i) => (
                   <div className="mt-0 mr-[40px]" key={i}>
-                    <img src={framework} alt="" className="w-20 h-20" />
+                    <img src={framework} alt="" className="w-15 h-15" />
                   </div>
                 ))}
               </Marquee>
@@ -186,7 +197,7 @@ const Home = () => {
               <Marquee speed={50} direction="right">
                 {tools.map((tool, i) => (
                   <div className="mt-0 mr-[40px]" key={i}>
-                    <img src={tool} alt="" className="w-20 h-20" />
+                    <img src={tool} alt="" className="w-15 h-15" />
                   </div>
                 ))}
               </Marquee>
@@ -195,12 +206,12 @@ const Home = () => {
         </div>
         {/* left side with my service */}
         <div className="flex-1 p-1 bg-gray-00 rounded-2xl md:w-3/4 h-[400px]  bg-neutral-500">
-          <div className="p-8 flex space-y-4 flex-col  bg-bDark h-full w-full rounded-2xl">
+          <div className="p-8 flex space-y-3 flex-col  bg-bDark h-full w-full rounded-2xl">
             {/* name */}
             <h1 className="font-roboto text-3xl font-bold text-tlight text-center">
-              Services I offer :
+              Services I offer
             </h1>
-            <div className="flex gap-3 mt-4 flex-col md:flex-row">
+            <div className="flex gap-3 mt-2 flex-col md:flex-row">
               {whatIdo.map((whatIdo, i) => (
                 <div className="flex flex-col gap-4 w-full" key={i}>
                   <img
