@@ -4,7 +4,7 @@ import Footer from "../staticComponents/footer";
 
 const StaticLayout = () => {
   return (
-    <main className="px-4 sm:px-8 md:px-16 lg:px-16 xl:px-16 2xl:px-16 3xl:px-32 ">
+    <main className="px-4 sm:px-8 md:px-16 lg:px-32 xl:px-32 max-w-[1440px] mx-auto">
       {/* navigation bar */}
       <Navbar />
       <Outlet />

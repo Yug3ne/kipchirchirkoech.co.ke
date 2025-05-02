@@ -8,13 +8,13 @@ import Contact from "./pages/staticPages/contact";
 
 const App = () => {
   return (
-    <>
+    <>  
       <Routes>
         <Route element={<StaticLayout />}>
           <Route path="/" element={<Home/>}/>
-          <Route path="/my-work" element={<Work/>}/>
-          <Route path="/about-me" element={<About/>}/>
-          <Route path="/contact-me" element={<Contact/>}/>
+          <Route path="/work" element={<Work/>}/>
+          <Route path="/about" element={<About/>}/>
+          <Route path="/contact" element={<Contact/>}/>
         </Route>
       </Routes>
     </>

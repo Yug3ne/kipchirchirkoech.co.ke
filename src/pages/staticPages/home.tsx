@@ -150,7 +150,7 @@ const Home = () => {
               <img
                 src={project.image}
                 alt="Eugene"
-                className="h-auto w-full object-top object-cover rounded-2xl hover:scale-105 transition-transform duration-[2000ms] ease-in-out hover:-translate-y-[calc(100%-500px)] "
+                className="h-auto w-full object-top object-cover rounded-2xl hover:scale-105 transition-transform duration-[3000ms] ease-in-out hover:-translate-y-[calc(100%-350px)] "
               />
             </Link>
           </div>
@@ -159,10 +159,10 @@ const Home = () => {
       {/* stack and work */}
       <section className="flex flex-col-reverse md:flex-row mt-4 gap-8">
         {/* right side with my stack */}
-        <div className="w-full md:w-1/3 h-[400px] bg-neutral-500 rounded-2xl p-1">
+        <div className="w-full md:w-1/4 h-[400px] bg-neutral-500 rounded-2xl p-1">
           <div className="bg-bDark rounded-2xl h-full w-full p-4">
             <h1 className="text-center text-2xl text-tlight font-roboto font-bold">
-              Tools and Framworks
+              Tools and Framworks :
             </h1>
             <div className="flex w-full mt-4">
               <Marquee speed={50} direction="right">
@@ -194,15 +194,15 @@ const Home = () => {
           </div>
         </div>
         {/* left side with my service */}
-        <div className="flex-1 p-1 bg-gray-00 rounded-2xl md:w-2/3 h-[400px]  bg-neutral-500">
-          <div className="p-8 flex space-y-8 flex-col  bg-bDark h-full w-full rounded-2xl">
+        <div className="flex-1 p-1 bg-gray-00 rounded-2xl md:w-3/4 h-[400px]  bg-neutral-500">
+          <div className="p-8 flex space-y-4 flex-col  bg-bDark h-full w-full rounded-2xl">
             {/* name */}
             <h1 className="font-roboto text-3xl font-bold text-tlight text-center">
-              Services I offer
+              Services I offer :
             </h1>
             <div className="flex gap-3 mt-4 flex-col md:flex-row">
               {whatIdo.map((whatIdo, i) => (
-                <div className="flex flex-col gap-4" key={i}>
+                <div className="flex flex-col gap-4 w-full" key={i}>
                   <img
                     src="/bulb.svg"
                     alt=""
