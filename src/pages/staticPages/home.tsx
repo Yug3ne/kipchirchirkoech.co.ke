@@ -3,6 +3,7 @@ import { IconType } from "react-icons";
 import { FaGithub, FaLinkedin, FaXTwitter } from "react-icons/fa6";
 import { Link } from "react-router";
 import TypewriterComponent from "typewriter-effect";
+import { motion } from "framer-motion";
 
 type logos = { icon: IconType; url: string };
 const logos: logos[] = [
@@ -63,7 +64,6 @@ const tools = [
   "tools/vercel_dark.svg",
   "tools/figma.svg",
   "tools/expo.svg",
- 
 ];
 
 type whatIdo = { title: string; desc: string };
@@ -86,9 +86,19 @@ const whatIdo: whatIdo[] = [
 const Home = () => {
   return (
     <main className="flex flex-col gap-8">
-      <section className="flex flex-col-reverse md:flex-row mt-4 gap-8">
+      <motion.section
+        className="flex flex-col-reverse md:flex-row mt-4 gap-8"
+        initial={{ opacity: 0, y: 50 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.5 }}
+      >
         {/* left side with intro */}
-        <div className="flex-1 p-1 bg-gray-00 rounded-2xl md:w-2/3 h-[400px]  bg-neutral-500">
+        <motion.div
+          className="flex-1 p-1 bg-gray-00 rounded-2xl md:w-2/3 h-[400px] bg-neutral-500"
+          initial={{ scale: 0.8 }}
+          animate={{ scale: 1 }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="p-8 flex space-y-8 flex-col  bg-bDark h-full w-full rounded-2xl">
             {/* name */}
             <h1 className="font-roboto flex gap-4 text-3xl font-bold text-tlight">
@@ -99,8 +109,8 @@ const Home = () => {
                   autoStart: true,
                   loop: true,
                   cursor: "",
-                  delay:200,
-                  deleteSpeed:100
+                  delay: 200,
+                  deleteSpeed: 100,
                 }}
               />
             </h1>
@@ -113,7 +123,10 @@ const Home = () => {
             </p>
             <div className="flex flex-col md:flex-row justify-between gap-2 mt-10">
               <div className=" bg-[#0e0c0c52] border border-bDark rounded-md flex items-center">
-                <Link to='/contact' className="flex items-center p-3 gap-3 text-2xl  font-roboto rounded-md text-tlight transition-transform duration-200 hover:scale-95 hover:bg-[#25212152]">
+                <Link
+                  to="/contact"
+                  className="flex items-center p-3 gap-3 text-2xl  font-roboto rounded-md text-tlight transition-transform duration-200 hover:scale-95 hover:bg-[#25212152]"
+                >
                   Get in Touch
                 </Link>
               </div>
@@ -135,9 +148,14 @@ const Home = () => {
               </div>
             </div>
           </div>
-        </div>
+        </motion.div>
         {/* right side with image */}
-        <div className="w-full md:w-1/3 h-[400px] ">
+        <motion.div
+          className="w-full md:w-1/3 h-[400px]"
+          initial={{ x: 100 }}
+          animate={{ x: 0 }}
+          transition={{ duration: 0.5 }}
+        >
           <div className="bg-[#5A5E61] rounded-2xl h-full">
             <img
               src="/Koech.png"
@@ -145,8 +163,8 @@ const Home = () => {
               className="h-full w-full object-cover rounded-2xl "
             />
           </div>
-        </div>
-      </section>
+        </motion.div>
+      </motion.section>
       {/* sample work */}
       <section className="flex flex-col md:flex-row gap-8">
         {projects.map((project) => (
