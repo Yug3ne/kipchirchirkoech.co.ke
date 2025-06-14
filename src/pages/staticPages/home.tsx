@@ -78,8 +78,8 @@ const whatIdo: whatIdo[] = [
     desc: "I develop robust and scalable RESTful APIs using Python and Django, ensuring secure and efficient communication between frontend and backend systems.",
   },
   {
-    title: "Website Design",
-    desc: "I design clean, user-friendly interfaces that blend aesthetics with usability, creating intuitive layouts and engaging user experiences.",
+    title: "Mobile Development",
+    desc: "I build mobile applications using React Native, Expo, creating seamless user experiences across platforms.",
   },
 ];
 
