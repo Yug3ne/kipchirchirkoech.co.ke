@@ -65,6 +65,12 @@ const Projects = () => {
               represents a unique challenge and learning experience in my
               journey as a developer.
             </p>
+            <div className="mt-2 rounded-md border border-yellow-500/30 bg-yellow-500/10 p-3 text-center">
+              <span className="text-yellow-200 text-sm">
+                🚧 This page is under construction — more projects are being
+                added soon.
+              </span>
+            </div>
           </div>
         </div>
 

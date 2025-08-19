@@ -1,6 +1,6 @@
 import { Link, NavLink } from "react-router";
 
-const navLinks = ["projects", "about", "contact"];
+const navLinks = ["work", "about", "contact"];
 
 const Navbar = () => {
   return (

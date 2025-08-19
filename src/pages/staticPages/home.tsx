@@ -16,6 +16,8 @@ type Project = {
   id: number;
   link: string;
   image: string;
+  title: string;
+  description: string;
 };
 
 const projects: Project[] = [
@@ -23,16 +25,22 @@ const projects: Project[] = [
     id: 1,
     link: "https://254brewing.com",
     image: "/254brewing.png",
+    title: "254 Brewing",
+    description: "Craft brewery marketing site with product highlights.",
   },
   {
     id: 2,
-    link: "https://254brewing.com",
-    image: "/254brewing.png",
+    link: "https://eventsnightday-zwoe0.sevalla.app/",
+    image: "/eventsnightday.png",
+    title: "Events Night Day",
+    description: "Events discovery and scheduling experience.",
   },
   {
     id: 3,
-    link: "https://254brewing.com",
-    image: "/254brewing.png",
+    link: "https://www.asakekenya.com/",
+    image: "/asakekenya.png",
+    title: "Asake Kenya",
+    description: "Asake Kenya marketing site",
   },
 ];
 
@@ -71,11 +79,11 @@ type whatIdo = { title: string; desc: string };
 const whatIdo: whatIdo[] = [
   {
     title: "Web Development",
-    desc: "I build responsive, high-performance websites using modern technologies like HTML, CSS, JavaScript, and frameworks such as React, Next.js and Phoenix.",
+    desc: "I build responsive, high-performance websites using modern technologies like HTML, CSS, JavaScript, and frameworks such as React, Next.js",
   },
   {
     title: "API Development",
-    desc: "I develop robust and scalable RESTful APIs using Python and Django, ensuring secure and efficient communication between frontend and backend systems.",
+    desc: "I develop robust and scalable RESTful APIs using Python and Django, Php, Laravel, ensuring secure and efficient communication between frontend and backend systems.",
   },
   {
     title: "Mobile Development",
@@ -174,13 +182,24 @@ const Home = () => {
           >
             <Link
               to={project.link}
-              className="bg-[#5A5E61] rounded-2xl h-full "
+              target="_blank"
+              rel="noopener noreferrer"
+              className="relative block rounded-2xl h-full overflow-hidden group bg-[#5A5E61]"
             >
               <img
                 src={project.image}
-                alt="Eugene"
-                className="h-auto w-full object-top object-cover rounded-2xl hover:scale-105 transition-transform duration-[3000ms] ease-in-out hover:-translate-y-[calc(100%-350px)] "
+                alt={project.title}
+                className="h-auto w-full object-top object-cover rounded-2xl transition-transform duration-[3000ms] ease-in-out group-hover:scale-105 group-hover:-translate-y-[calc(100%-350px)]"
               />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
+              <div className="absolute inset-x-0 bottom-0 p-4 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                <h3 className="text-tlight text-xl font-semibold">
+                  {project.title}
+                </h3>
+                <p className="text-tlight/90 text-sm mt-1">
+                  {project.description}
+                </p>
+              </div>
             </Link>
           </div>
         ))}
